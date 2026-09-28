@@ -13,6 +13,7 @@ public class PanelPlayer : PanelBase
     public TMP_Text BulletNum;
     public Image[] Inventory;
     public Image[] miniMapImages;
+    public TMP_Text TimerText;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

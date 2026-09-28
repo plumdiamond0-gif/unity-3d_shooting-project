@@ -62,6 +62,7 @@ public class UIManager : MonoBehaviour
                 playerAttack.weaponImage = HUD.WeapomImage;
                 playerAttack.weaponText = HUD.WeapomText;   
                 playerAttack.bulletNumText = HUD.BulletNum;
+                playerAttack.Timertext = HUD.TimerText; 
             }
 
             Health playerHealth = playerInfo.GetComponent<Health>();

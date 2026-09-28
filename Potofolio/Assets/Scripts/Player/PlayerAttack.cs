@@ -21,6 +21,7 @@ public class PlayerAttack : MonoBehaviour
     [HideInInspector] public Image weaponImage;
     [HideInInspector] public TMP_Text weaponText;
     [HideInInspector] public TMP_Text bulletNumText;
+    [HideInInspector] public TMP_Text Timertext;
     #endregion
 
     #region Weapon & Attack Settings
@@ -57,7 +58,8 @@ public class PlayerAttack : MonoBehaviour
     #endregion
 
     public bool CanAttack;
-    
+    public GameObject Shield;
+
     void Start()
     {
         _currentAmmo = new()
@@ -97,6 +99,9 @@ public class PlayerAttack : MonoBehaviour
         {
             attackGaugeBarFill.fillAmount = 0f;
         }
+        Shield.SetActive(false);
+        Timertext.gameObject.SetActive(false);
+
     }
 
     private void Update()
@@ -242,6 +247,10 @@ public class PlayerAttack : MonoBehaviour
             if (ran % 2 == 0)
             {
                 enemy.GetComponent<Health>().TakeDamage(2600);
+                //GM.GetPoolManager().PlayParticle(
+                //    ParticleType.Smoke, enemy.transform.position, 
+                //    quaternion.identity, Vector3.one, enemy.transform);
+
             }
         }
 
@@ -261,6 +270,37 @@ public class PlayerAttack : MonoBehaviour
         }
 
         return (int)data.BulletNum + (int)Mathf.Pow(currentLevel, 1.15f) - 1;
+    }
+    public void ActiveShield(float val)
+    {
+        Health health = GetComponent<Health>();
+        health.InviciBuff(val);
+        StartCoroutine(ShiEldTime(val));
+    }
+    IEnumerator ShiEldTime(float val)
+    {
+        Shield.SetActive(true);
+        CanAttack = false;
+        yield return new WaitForSeconds(val);
+        Shield.SetActive(false);
+        CanAttack = true;
+    }
+    public void RecallBeacon(float val)
+    {
+        StartCoroutine(RecallRoutine(val, transform.position));
+    }
+    IEnumerator RecallRoutine(float val, Vector3 pos)
+    {
+        Timertext.gameObject.SetActive(true);
+        int time = (int)val; 
+        while(time > 0)
+        {
+            Timertext.text = time.ToString();
+            yield return new WaitForSeconds(1f);
+            time--;
+        }
+        Timertext.gameObject.SetActive(false);
+        transform.position = pos;
     }
 }
 

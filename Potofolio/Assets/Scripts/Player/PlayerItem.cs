@@ -93,6 +93,7 @@ public class PlayerItem : MonoBehaviour
     }
     #endregion
 
+
     #region Inventory & Item Logic
     private void OnTriggerEnter(Collider other)
     {
@@ -161,5 +162,6 @@ public class PlayerItem : MonoBehaviour
             }
         }
     }
+
     #endregion
 }

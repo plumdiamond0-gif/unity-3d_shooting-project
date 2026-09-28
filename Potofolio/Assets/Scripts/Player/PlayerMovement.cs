@@ -240,16 +240,7 @@ public class PlayerMovement : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, _yRotation, 0);
     }
 
-    public void RecallBeacon(float val)
-    {
-        StartCoroutine(RecallRoutine(val, transform.position));
-    }
 
-    IEnumerator RecallRoutine(float val, Vector3 pos)
-    {
-        yield return new WaitForSeconds(val);
-        transform.position = pos;
-    }
     public void TakeDamage(float damage)
     {
         health.TakeDamage(damage);

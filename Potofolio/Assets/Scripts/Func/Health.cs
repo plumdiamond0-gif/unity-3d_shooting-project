@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.Rendering.DebugUI;
 
 public class Health : MonoBehaviour
 {
@@ -13,7 +14,6 @@ public class Health : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
         CurrentHp = MaxHp;
     }
 
@@ -25,10 +25,8 @@ public void TakeDamage(float value)
         }
         CurrentHp -= value;
         CurrentHp = Mathf.Clamp(CurrentHp, 0, MaxHp);
-        HealthBarFill.fillAmount = CurrentHp / MaxHp;   
+        HealthBarFill.fillAmount = CurrentHp / MaxHp;
         StartCoroutine(InvincibleTimer());
-
-
     }
 
     public void Heal(float value)

@@ -45,11 +45,11 @@ public static class ItemEffect
                 break;
 
             case InItemType.BeInvincible:
-                BeInvincible(health, 5f);
+                BeInvincible(attack, 5f);
                 break;
 
             case InItemType.RecallBeacon:
-                RecallBeacon(movement, 5f);
+                RecallBeacon(attack, 5f);
                 break;
 
             case InItemType.HalfRemove:
@@ -99,16 +99,16 @@ public static class ItemEffect
         Debug.Log($"점프량 {val}만큼 증가");
         stat.JumpPowerMultiplier *= val;
     }
-    public static void BeInvincible(Health health, float val)
+    public static void BeInvincible(PlayerAttack attack, float val)
     {
-        health.InviciBuff(val);
+        attack.ActiveShield(val);
     }
-    public static void RecallBeacon(PlayerMovement movement, float val)
+    public static void RecallBeacon(PlayerAttack attack, float val)
     {
-        movement.RecallBeacon(val); 
+        attack.RecallBeacon(val); 
     }
-    public static void HalfRemove(PlayerAttack playerAttack)
+    public static void HalfRemove(PlayerAttack attack)
     {
-        playerAttack.HalfRemove();
+        attack.HalfRemove();
     }
 }

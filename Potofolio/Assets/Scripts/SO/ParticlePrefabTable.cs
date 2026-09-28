@@ -7,7 +7,8 @@ public enum ParticleType
     Fire,
     Slow,
     Stun,
-    Toxic
+    Toxic,
+    Smoke,
 }
 
 [System.Serializable]

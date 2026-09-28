@@ -35,8 +35,6 @@ public class SceneBattle : SceneBase
                 playerMovement.state = PlayerState.InBattle;
                 PlayerAttack playerAttack = player.GetComponent<PlayerAttack>();
                 playerAttack.CanAttack = true;
-
-
             });
             });
 
