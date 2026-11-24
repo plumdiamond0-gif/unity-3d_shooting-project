@@ -159,7 +159,6 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
             default:
                 break;
         }
-
     }
     IEnumerator AttackCoolTime()
     {

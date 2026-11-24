@@ -201,8 +201,8 @@ public class PlayerMovement : MonoBehaviour
         _rb.linearVelocity = new Vector3(_rb.linearVelocity.x, 
             0, _rb.linearVelocity.z);
 
-        _rb.AddForce(transform.up * jumpPower 
-            * _stat.JumpPowerMultiplier, ForceMode.Impulse);
+        _rb.AddForce(transform.up * jumpPower, 
+            ForceMode.Impulse);
         _isGrounded = false;
     }
 

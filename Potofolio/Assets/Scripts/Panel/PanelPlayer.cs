@@ -14,11 +14,17 @@ public class PanelPlayer : PanelBase
     public Image[] Inventory;
     public Image[] miniMapImages;
     public TMP_Text TimerText;
+    [SerializeField] Slider ExpBarSlider;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
         ChargeUI.SetActive(false);
+        foreach (var item in Inventory)
+        {
+            item.enabled = false;
+        }
+        ExpBarSlider.interactable = false;
     }
 }

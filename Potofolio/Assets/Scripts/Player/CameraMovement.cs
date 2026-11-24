@@ -29,7 +29,7 @@ public class CameraMovement : MonoBehaviour
             playerAttack.currentWeaponData.returnSpeed * Time.deltaTime
         );
 
-        _currentRotation = Vector3.Slerp(
+        _currentRotation = Vector3.Lerp(
             _currentRotation,
             _targetRotation,
             playerAttack.currentWeaponData.snappiness * Time.deltaTime

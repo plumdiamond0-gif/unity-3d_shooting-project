@@ -100,7 +100,7 @@ public class PlayerAttack : MonoBehaviour
             attackGaugeBarFill.fillAmount = 0f;
         }
         Shield.SetActive(false);
-        Timertext.gameObject.SetActive(false);
+        Timertext?.gameObject.SetActive(false);
 
     }
 

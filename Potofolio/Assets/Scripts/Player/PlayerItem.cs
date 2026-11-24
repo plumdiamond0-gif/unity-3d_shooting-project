@@ -108,6 +108,7 @@ public class PlayerItem : MonoBehaviour
             {
                 for (int i = 0; i < inventoryImages.Length; i++)
                 {
+                    inventoryImages[i].enabled = true;
                     if (inventoryImages[i] != null && inventoryImages[i].sprite == null)
                     {
                         inventoryImages[i].sprite = data.itemSprite;
@@ -159,6 +160,7 @@ public class PlayerItem : MonoBehaviour
             if (inventoryImages[arrayIndex] != null)
             {
                 inventoryImages[arrayIndex].sprite = null;
+                inventoryImages[arrayIndex].enabled = false;
             }
         }
     }

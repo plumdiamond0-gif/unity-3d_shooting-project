@@ -164,6 +164,7 @@ MonoBehaviour:
   - {fileID: 6812391375101381525}
   - {fileID: 7419531801152294657}
   TimerText: {fileID: 8127289699015183510}
+  ExpBarSlider: {fileID: 5966599169009611594}
 --- !u!1 &196750216986220291
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,7 +882,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 0
+  m_FillAmount: 0.077
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -1056,7 +1057,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.077
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

@@ -7,6 +7,7 @@ public class door : TriggerObject
     private void Start()
     {
         anim = GetComponent<Animator>();
+        anim.SetBool("Opened", false);
     }
 
     protected override void Trigger(GameObject entered)

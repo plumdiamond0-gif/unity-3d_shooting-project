@@ -24,7 +24,8 @@ public class Map : MonoBehaviour
     void CreateMap(PanelPlayer playerPanel)
     {
         List<BlockData> randomBlocks = new();
-        foreach (var item in GM.GetPrefabManager().BlockPrefabTable.blockDatas)
+        foreach (var item in GM.GetPrefabManager().
+            BlockPrefabTable.blockDatas)
         { randomBlocks.Add(item); }
         Shuffle(randomBlocks);
         int[] yRotations = { 0, 90, 180, 270 };

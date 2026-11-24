@@ -7,7 +7,7 @@ public class Item : MonoBehaviour
     public OutItemType outType;
     public InItemType  inType;
     public WeaponState bulletType;
-    Collider collider;
+    public Collider collider;
 
     private void Awake()
     {
@@ -21,7 +21,6 @@ public class Item : MonoBehaviour
         else
         {
             data = GM.GetPrefabManager().ItemPrefabTable.ItemDatas.Find(x => x.outItemType == outType);
-            collider.isTrigger = false;
         }
 
     }
